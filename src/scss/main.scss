@@ -1,9 +1,8 @@
-@use  "mixins";
-@use  "fonts";
-@use  "vendor";
-@use  "vars";
-@use  "settings";
-
+@use "mixins" as *;
+@use "fonts" as *;
+@use "vendor" as *;
+@use "vars" as *;
+@use "settings" as *;
 
 .header {
   text-align: center;

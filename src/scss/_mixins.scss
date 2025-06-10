@@ -1,5 +1,5 @@
-@use  "./mixins/breakpoint";
-@use  "./mixins/stop-scroll";
-@use  "./mixins/visually-hidden";
-@use  "./mixins/burger";
-@use  "./mixins/font-face";
+@forward  "./mixins/breakpoint";
+@forward "./mixins/stop-scroll";
+@forward  "./mixins/visually-hidden";
+@forward  "./mixins/burger";
+@forward  "./mixins/font-face";
