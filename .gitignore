@@ -2,7 +2,6 @@
 /dist/
 .DS_Store
 *.log
-webpack.config.js
 webpack.dev.config.js
 *.tmp.js
 *.map
