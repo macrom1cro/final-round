@@ -33,7 +33,8 @@ const optimization = () => {
             plugins: [
               ["gifsicle", { interlaced: true }],
               ["mozjpeg", { quality: 80 }], // Для JPEG
-              ["optipng", { optimizationLevel: 5 }], // Для PNG
+              ["optipng", { optimizationLevel: 5 }],
+              ["pngquant", { quality: [0.7, 0.9] }], // Для PNG
               [
                 "svgo",
                 {
@@ -99,6 +100,10 @@ module.exports = {
     compress: true,
     hot: true,
     port: 3000,
+  },
+  performance: {
+    maxAssetSize: 300 * 1024, // 300 КБ вместо 244 КБ
+    maxEntrypointSize: 300 * 1024,
   },
   optimization: optimization(),
   plugins: plugins(),
