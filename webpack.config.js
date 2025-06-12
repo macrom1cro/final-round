@@ -30,28 +30,23 @@ const optimization = () => {
         minimizer: {
           implementation: ImageMinimizerPlugin.imageminMinify,
           options: {
-            // Lossless optimization with custom option
-            // Feel free to experiment with options for better result for you
             plugins: [
               ["gifsicle", { interlaced: true }],
-              ["jpegtran", { progressive: true }],
-              ["optipng", { optimizationLevel: 5 }],
-              // Svgo configuration here https://github.com/svg/svgo#configuration
+              ["mozjpeg", { quality: 80 }], // Для JPEG
+              ["optipng", { optimizationLevel: 5 }], // Для PNG
               [
                 "svgo",
                 {
-                  plugins: extendDefaultPlugins([
+                  plugins: [
                     {
-                      name: "removeViewBox",
-                      active: false,
-                    },
-                    {
-                      name: "addAttributesToSVGElement",
+                      name: "preset-default",
                       params: {
-                        attributes: [{ xmlns: "http://www.w3.org/2000/svg" }],
+                        overrides: {
+                          removeViewBox: false, // Пример настройки
+                        },
                       },
                     },
-                  ]),
+                  ],
                 },
               ],
             ],

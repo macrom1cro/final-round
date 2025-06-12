@@ -1,3 +1,5 @@
 @use "./mixins/font-face" as *;
 
-@include font-face("notosans", "notosans", 400);
+@include font-face("TTLakes-Bold", "TTLakes-Bold", bold);
+@include font-face("TTLakes-Medium", "TTLakes-Medium", 500);
+@include font-face("TTLakes-Regular", "TTLakes-Regular", 400);
