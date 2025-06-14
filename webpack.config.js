@@ -112,7 +112,15 @@ module.exports = {
     rules: [
       {
         test: /\.html$/,
-        loader: "html-loader",
+        use: [
+          "html-loader",
+          {
+            loader: "posthtml-loader",
+            options: {
+              plugins: [require("posthtml-include")({ root: "./src" })],
+            },
+          },
+        ],
       },
       {
         test: /\.s[ac]ss$/,
