@@ -28,29 +28,13 @@ const optimization = () => {
       new TerserWebpackPlugin(),
       new ImageMinimizerPlugin({
         minimizer: {
-          implementation: ImageMinimizerPlugin.imageminMinify,
+          implementation: ImageMinimizerPlugin.sharpMinify,
           options: {
-            plugins: [
-              ["gifsicle", { interlaced: true }],
-              ["mozjpeg", { quality: 80 }], // Для JPEG
-              ["optipng", { optimizationLevel: 5 }],
-              ["pngquant", { quality: [0.7, 0.9] }], // Для PNG
-              [
-                "svgo",
-                {
-                  plugins: [
-                    {
-                      name: "preset-default",
-                      params: {
-                        overrides: {
-                          removeViewBox: false, // Пример настройки
-                        },
-                      },
-                    },
-                  ],
-                },
-              ],
-            ],
+            encodeOptions: {
+              jpeg: { quality: 90 },
+              png: { quality: 90 },
+              webp: { lossless: true },
+            },
           },
         },
       }),

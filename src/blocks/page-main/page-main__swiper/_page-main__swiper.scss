@@ -1,4 +1,5 @@
 @use '../../../scss/vars' as *;
+@use "swiper/css" as *;
 
 
 // body {
@@ -123,7 +124,7 @@
 }
 
 @media (max-width: 767px) {
-  .main {
+  .main__swiper {
     padding: 16px 0 33px 0;
   }
   .header {
@@ -161,7 +162,7 @@
   }
 }
 @media (min-width: 768px) {
-  .main {
+  .main__swiper {
     min-height: 266px;
     padding: 0 24px 34px;
     display: grid;
@@ -228,7 +229,7 @@
     height: 56px;
     padding-left: 24px;
   }
-  .main {
+  .main__swiper {
     padding: 0 32px 34px;
   }
 

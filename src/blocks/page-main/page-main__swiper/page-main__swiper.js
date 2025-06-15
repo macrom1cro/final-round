@@ -1,3 +1,4 @@
+import Swiper from 'swiper';
 // Объявляем переменную swiper в глобальной области видимости
 let swiper;
 let sliderInit = false;
@@ -7,12 +8,13 @@ function initSlider() {
   if (sliderInit) return;
 
   swiper = new Swiper(".swiper", {
+    breakpoints: { 768: { enabled: false } },
     slidesPerView: "auto",
     slidesOffsetBefore: 16,
     slidesOffsetAfter: 16,
     centeredSlides: false,
-    spaceBetween: 16,    
-    pagination: { el: ".swiper-pagination", clickable: true  },
+    spaceBetween: 16,
+    pagination: { el: ".swiper-pagination", clickable: true },
   });
 
   sliderInit = true;
@@ -41,6 +43,7 @@ function handleResize() {
 
 window.addEventListener("load", checkWidth);
 window.addEventListener("resize", handleResize);
+// window.addEventListener("resize", initSlider);
 
 document.querySelectorAll(".about__read-more").forEach(
   btn =>
