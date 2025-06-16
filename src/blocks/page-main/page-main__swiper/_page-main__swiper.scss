@@ -1,25 +1,10 @@
-@use '../../../scss/vars' as *;
+@use "../../../scss/vars" as *;
 @use "swiper/css/bundle" as *;
-
-
-// body {
-//   text-align: center;
-//   margin: 0 auto;
-//   min-width: 320px;
-//   max-width: 1120px;
-//   min-height: 100vh;
-//   font-family: "TT Lakes";
-//   color: var(--black);
-// }
 
 .header-swiper {
   height: 56px;
-  background: linear-gradient(
-    90deg,
-    $background 0%,
-    $background-white 100%
-  );
-  padding-left: 24px;
+  background: linear-gradient(90deg, $background 0%, $background-white 100%);
+  padding-left: 16px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -33,7 +18,8 @@
   text-transform: uppercase;
   color: $gray;
 }
-.main__swiper {
+.page-main__swiper {
+  // max-width: 1120px;
   background: $background;
 }
 
@@ -124,7 +110,10 @@
 }
 
 @media (max-width: 767px) {
-  .main__swiper {
+  .page-main__swiper {
+  
+  // max-width: 768px;
+
     padding: 16px 0 33px 0;
   }
   .header {
@@ -157,12 +146,12 @@
     display: block;
     position: static;
   }
-  .about__read-more {
+  .show__all {
     display: none;
   }
 }
 @media (min-width: 768px) {
-  .main__swiper {
+  .page-main__swiper {
     min-height: 266px;
     padding: 0 24px 34px;
     display: grid;
@@ -191,11 +180,12 @@
   .card {
     width: 224px;
   }
-  .about__read-more {
+  .show__all {
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.2px;
+    white-space: nowrap;
     color: $black;
     text-decoration: none;
     border-radius: 5px;
@@ -229,10 +219,9 @@
     height: 56px;
     padding-left: 24px;
   }
-  .main__swiper {
+  .page-main__swiper {
     padding: 0 32px 34px;
   }
-
   #wrapper {
     display: grid;
     grid-template-columns: repeat(4, 240px);

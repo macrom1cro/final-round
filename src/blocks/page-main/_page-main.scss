@@ -1,14 +1,15 @@
-@use '../../scss/vars' as *;
+@use "../../scss/vars" as *;
 
 body {
   min-width: 320px;
   max-width: 1440px;
-  margin: 0px auto;
+  // margin: 0px auto;
   background: $background;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   // align-items: center;
+  // justify-content: center;
   gap: 24px;
   font-family: "TT Lakes";
 }
@@ -116,9 +117,7 @@ body {
 .about__text.active {
   max-height: max-content;
 }
-.read-more__conteiner {
-  min-width: 288px;
-}
+
 .about__read-more {
   font-weight: 500;
   font-size: 16px;
@@ -204,6 +203,7 @@ body {
   }
   .about__container {
     padding: 0;
+    gap: 10px;
   }
   .about__text {
     min-width: 312px;
@@ -256,6 +256,10 @@ body {
     min-width: 956px;
     gap: 36px;
     padding: 0 32px;
+  }
+  .about__container {
+    padding: 0;
+    gap: 14px;
   }
   .about__text {
     width: 490px;

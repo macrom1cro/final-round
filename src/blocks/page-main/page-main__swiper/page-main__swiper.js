@@ -1,6 +1,4 @@
 import Swiper from 'swiper/bundle';
-// import { Navigation, Pagination } from 'swiper/modules';
-// import 'swiper/css';
 // Объявляем переменную swiper в глобальной области видимости
 let swiper;
 let sliderInit = false;
@@ -10,7 +8,7 @@ function initSlider() {
   if (sliderInit) return;
 
   swiper = new Swiper(".swiper", {
-    // breakpoints: { 768: { enabled: false } },
+    breakpoints: { 768: { enabled: false } },
     slidesPerView: "auto",
     slidesOffsetBefore: 16,
     slidesOffsetAfter: 16,
@@ -26,15 +24,12 @@ function destroySlider() {
   if (!sliderInit || !swiper) return;
 
   swiper.destroy(true, true); // Полное уничтожение с очисткой всех событий
-
-  // Дополнительно: возвращаем слайдер в исходное состояние
   swiper = null;
   sliderInit = false;
 }
 
 function checkWidth() {
   window.innerWidth <= mediaSize ? initSlider() : destroySlider();
-  console.log("sdfsdfdsfdsfsd")
 }
 
 // Добавляем троттлинг для оптимизации
@@ -46,9 +41,8 @@ function handleResize() {
 
 window.addEventListener("load", checkWidth);
 window.addEventListener("resize", handleResize);
-// window.addEventListener("resize", initSlider);
 
-document.querySelectorAll(".about__read-more").forEach(
+document.querySelectorAll(".show__all").forEach(
   btn =>
     (btn.onclick = e => {
       const s = e.target.previousElementSibling;
@@ -56,7 +50,7 @@ document.querySelectorAll(".about__read-more").forEach(
         ? "Скрыть"
         : "Показать все";
       e.target
-        .closest(".about__read-more")
+        .closest(".show__all")
         .previousElementSibling.classList.toggle("active");
     })
 );

@@ -4,6 +4,6 @@ document.querySelectorAll(".about__read-more").forEach(btn => {
     .toggle("active")
     ? "Свернуть"
     : "Читать далее";
-    e.target.parentElement.parentElement.previousElementSibling.classList.toggle("active");
+    e.target.parentElement.previousElementSibling.classList.toggle("active");
   });
 });
