@@ -1,44 +1,40 @@
 @use "./mixins";
 @use "./fonts";
 @use "./vendor";
+@use './swiper';
 @use "./vars";
 @use "./settings";
-@use 'swiper';
 @use "./blocks";
 
 
-:root {
-  --paleBackground: #ffffff;
-  --white: #f8f8f8;
-  --whiteButton: #eaeaea;
-  --grey: #7e7e82;
-  --black: #1b1c21;
-  --superLightTurquoise: #d9fff5;
-  --lightTurquoise: #b8ffec;
-  --turquoise: #41f6d7;
-  --swiper-pagination-color: #b5b6bc;
-  --swiper-pagination-bullet-inactive-color: #dddddd;
-  --swiper-pagination-bullet-inactive-opacity: 1;
 
-  --swiper-pagination-bullet-width: 12px;
-  --swiper-pagination-bullet-height: 12px;
-  --swiper-pagination-bullet-horizontal-gap: 6px;
-}
+// :root {
+//   --paleBackground: #ffffff;
+//   --white: #f8f8f8;
+//   --whiteButton: #eaeaea;
+//   --grey: #7e7e82;
+//   --black: #1b1c21;
+//   --superLightTurquoise: #d9fff5;
+//   --lightTurquoise: #b8ffec;
+//   --turquoise: #41f6d7;
+//   --swiper-pagination-color: #b5b6bc;
+//   --swiper-pagination-bullet-inactive-color: #dddddd;
+//   --swiper-pagination-bullet-inactive-opacity: 1;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  text-align: center;
-  margin: 0 auto;
-  min-width: 320px;
-  max-width: 1120px;
-  min-height: 100vh;
-  font-family: "TT Lakes";
-  color: var(--black);
-}
+//   --swiper-pagination-bullet-width: 12px;
+//   --swiper-pagination-bullet-height: 12px;
+//   --swiper-pagination-bullet-horizontal-gap: 6px;
+// }
+
+// body {
+//   text-align: center;
+//   margin: 0 auto;
+//   min-width: 320px;
+//   max-width: 1120px;
+//   min-height: 100vh;
+//   font-family: "TT Lakes";
+//   color: var(--black);
+// }
 
 .header {
   height: 56px;
@@ -95,7 +91,7 @@ body {
 .samsung {
   width: 116px;
   height: 38px;
-  background-size: con;
+  background-size: co;
   background: url("../img/samsung.svg");
 }
 .apple {
@@ -150,6 +146,7 @@ body {
 #pagination {
   display: none;
 }
+
 
 @media (max-width: 767px) {
   .main {

@@ -1,23 +1,26 @@
 @use "./vars" as *;
 
-html {
+html 
+
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-*,
 *::before,
 *::after {
   box-sizing: inherit;
 }
 
-*:focus{
+*:focus {
   outline: 2px solid transparent;
 }
 
 body {
   overflow-anchor: none;
   margin: 0;
-  font-family: 'Barlow', sans-serif;
+  font-family: "Barlow", sans-serif;
   color: $main-text-color;
   background-color: $background;
   scroll-behavior: smooth;
@@ -28,7 +31,13 @@ a {
   color: inherit;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
   padding: 0;
 }
@@ -65,7 +74,7 @@ textarea::-moz-placeholder {
 
 input:focus,
 textarea:focus {
-  outline:none;
+  outline: none;
 }
 
 footer {

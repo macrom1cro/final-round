@@ -1,4 +1,6 @@
-import Swiper from 'swiper';
+import Swiper from 'swiper/bundle';
+// import { Navigation, Pagination } from 'swiper/modules';
+// import 'swiper/css';
 // Объявляем переменную swiper в глобальной области видимости
 let swiper;
 let sliderInit = false;
@@ -8,13 +10,13 @@ function initSlider() {
   if (sliderInit) return;
 
   swiper = new Swiper(".swiper", {
-    breakpoints: { 768: { enabled: false } },
+    // breakpoints: { 768: { enabled: false } },
     slidesPerView: "auto",
     slidesOffsetBefore: 16,
     slidesOffsetAfter: 16,
     centeredSlides: false,
     spaceBetween: 16,
-    pagination: { el: ".swiper-pagination", clickable: true },
+    pagination: { el: ".swiper-pagination", clickable: true }
   });
 
   sliderInit = true;
@@ -32,6 +34,7 @@ function destroySlider() {
 
 function checkWidth() {
   window.innerWidth <= mediaSize ? initSlider() : destroySlider();
+  console.log("sdfsdfdsfdsfsd")
 }
 
 // Добавляем троттлинг для оптимизации
