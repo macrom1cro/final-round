@@ -1,4 +1,4 @@
-import Swiper from 'swiper/bundle';
+import Swiper from "swiper/bundle";
 // Объявляем переменную swiper в глобальной области видимости
 let swiper;
 let sliderInit = false;
@@ -14,7 +14,7 @@ function initSlider() {
     slidesOffsetAfter: 16,
     centeredSlides: false,
     spaceBetween: 16,
-    pagination: { el: ".swiper-pagination", clickable: true }
+    pagination: { el: ".swiper-pagination", clickable: true },
   });
 
   sliderInit = true;
@@ -42,15 +42,13 @@ function handleResize() {
 window.addEventListener("load", checkWidth);
 window.addEventListener("resize", handleResize);
 
-document.querySelectorAll(".show__all").forEach(
-  btn =>
-    (btn.onclick = e => {
-      const s = e.target.previousElementSibling;
-      btn.lastElementChild.textContent = s.classList.toggle("active")
-        ? "Скрыть"
-        : "Показать все";
-      e.target
-        .closest(".show__all")
-        .previousElementSibling.classList.toggle("active");
-    })
+document.querySelectorAll(".read-more__text1").forEach(btn =>
+  btn.addEventListener("click", e => {
+    btn.textContent = e.target.previousElementSibling.classList.toggle("active")
+      ? "Скрыть"
+      : "Показать все";
+    e.target
+      .closest(".show__all")
+      .previousElementSibling.classList.toggle("active");
+  })
 );

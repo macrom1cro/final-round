@@ -1,16 +1,11 @@
-@use "./vars" as *;
+html
 
-html 
-
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-*::before,
-*::after {
-  box-sizing: inherit;
 }
 
 *:focus {
@@ -18,12 +13,14 @@ html
 }
 
 body {
-  overflow-anchor: none;
-  margin: 0;
-  font-family: "Barlow", sans-serif;
-  color: $main-text-color;
-  background-color: $background;
-  scroll-behavior: smooth;
+  min-width: 320px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: "TT Lakes";
+  color: var(--black);
+  background-color: var(--background);
 }
 
 a {
@@ -69,7 +66,7 @@ input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder,
 input::-moz-placeholder,
 textarea::-moz-placeholder {
-  color: $gray;
+  color: var(--gray);
 }
 
 input:focus,
@@ -78,7 +75,7 @@ textarea:focus {
 }
 
 footer {
-  background: $footer-background;
+  background: var(--footer-background);
 }
 
 .is--hidden {
@@ -102,18 +99,15 @@ footer {
 }
 
 .container {
-  max-width: 1810px;
-  margin: 0 auto;
-  padding-right: 20px;
-  padding-left: 20px;
+  min-width: 320px;
+  max-width: 1120px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 
-  @media (max-width: 1200px) {
-    padding-right: 50px;
-    padding-left: 50px;
+  @media (max-width: 768px) {
   }
 
-  @media (max-width: 576px) {
-    padding-right: 15px;
-    padding-left: 15px;
+  @media (max-width: 320px) {
   }
 }

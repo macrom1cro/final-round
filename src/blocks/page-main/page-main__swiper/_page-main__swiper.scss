@@ -1,14 +1,18 @@
 @use "../../../scss/vars" as *;
 @use "swiper/css/bundle" as *;
+@use "../../../scss/mixins/breakpoint" as *;
 
 .header-swiper {
   height: 56px;
   background: linear-gradient(90deg, $background 0%, $background-white 100%);
-  padding-left: 16px;
+  // padding-left: 16px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: start;
+  @include mobile {
+    padding-left: 16px;
+  }
 }
 .header-swiper__title {
   font-weight: 400;
@@ -111,14 +115,13 @@
 
 @media (max-width: 767px) {
   .page-main__swiper {
-  
-  // max-width: 768px;
+    // max-width: 768px;
 
     padding: 16px 0 33px 0;
   }
-  .header {
+  .header-swiper {
     height: 80px;
-    padding-left: 16px;
+    padding-left: 0px;
     text-align: left;
   }
 
@@ -207,7 +210,7 @@
     transform: rotate(180deg);
   }
 
-  .read-more__text {
+  .read-more__text1 {
     height: 24px;
     font-weight: 500;
     font-size: 16px;
@@ -215,9 +218,9 @@
   }
 }
 @media (min-width: 1120px) {
-  .header {
-    height: 56px;
-    padding-left: 24px;
+  .header-swiper {
+    // height: 56px;
+    // padding-left: 24px;
   }
   .page-main__swiper {
     padding: 0 32px 34px;
