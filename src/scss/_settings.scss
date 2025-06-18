@@ -1,3 +1,6 @@
+@use "./vars" as *;
+@use "./mixins" as *;
+
 html
 
 *,
@@ -19,8 +22,8 @@ body {
   justify-content: center;
   min-height: 100vh;
   font-family: "TT Lakes";
-  color: var(--black);
-  background-color: var(--background);
+  color: $black;
+  background-color: $background;
 }
 
 a {

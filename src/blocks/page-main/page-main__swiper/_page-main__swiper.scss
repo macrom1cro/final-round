@@ -1,6 +1,6 @@
 @use "../../../scss/vars" as *;
 @use "swiper/css/bundle" as *;
-@use "../../../scss/mixins/breakpoint" as *;
+@use "../../../scss/mixins" as *;
 
 .header-swiper {
   height: 56px;
@@ -121,7 +121,7 @@
   }
   .header-swiper {
     height: 80px;
-    padding-left: 0px;
+   
     text-align: left;
   }
 
