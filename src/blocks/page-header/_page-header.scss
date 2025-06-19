@@ -1,4 +1,4 @@
-@use '../../scss/vars' as *;
+@use "../../scss/vars" as *;
 
 .header {
   width: 100%;
@@ -13,51 +13,61 @@
   justify-content: space-between;
   padding: 0 16px;
   transition: min-width 1s ease-out;
-}
-.header__conteiner {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: end;
-  gap: 20px;
-}
-.header__conteiner-left {
-  width: 172px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  &__conteiner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    gap: 20px;
+  }
+  &__conteiner-left {
+    width: 172px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__conteiner-middle {
+    display: none;
+  }
+  &__conteiner-right {
+    width: 96px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background-size: cover;
+    cursor: pointer;
+    &_burger {
+      background-image: url("../img/burger.svg");
+    }
+    &_repair {
+      background-image: url("../img/repair.svg");
+    }
+    &_checkstatus {
+      background-image: url("../img/checkstatus.svg");
+    }
+  }
+  
 }
 
-.header__conteiner-middle {
-  display: none;
-}
-
-.header__conteiner-right {
-  width: 96px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header__button {
-  width: 40px;
-  height: 40px;
-  border: none;
-  border-radius: 20px;
-  background-size: cover;
-  cursor: pointer;
-}
-.button__burger {
-  background-image: url("../img/burger.svg");
-}
-.button__repair {
-  background-image: url("../img/repair.svg");
-}
-.button__checkstatus {
-  background-image: url("../img/checkstatus.svg");
-}
+// .button {
+//   &__burger {
+//     background-image: url("../img/burger.svg");
+//   }
+//   &__repair {
+//     background-image: url("../img/repair.svg");
+//   }
+//   &__checkstatus {
+//     background-image: url("../img/checkstatus.svg");
+//   }
+// }
 
 .header__divider {
   width: 2px;

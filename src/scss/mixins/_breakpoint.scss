@@ -25,13 +25,13 @@
 }
 
 @mixin desktop {
-  @media (min-width: $desktop-min) {
+  @media (min-width: $desktop-min) and (max-width: $desktop-max) {
     @content;
   }
 }
 
-@mixin desktop-down {
-  @media (max-width: $tablet-max) {
+@mixin desktop-up {
+  @media (mix-width: $desktop-min) {
     @content;
   }
 }

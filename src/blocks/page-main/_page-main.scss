@@ -15,37 +15,53 @@
   flex-direction: column;
   justify-content: space-evenly;
   gap: 24px;
+  &__title {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &__title-highlight {
+    width: 4px;
+    border-radius: 0px 4px 4px 0px;
+    background-color: $turquoise;
+    @include desktop {
+      border-radius: 4px;
+    }
+  }
+  &__title-text {
+    width: 300px;
+    padding-left: 16px;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: -0.6px;
+    @include tablet-up {
+      padding-left: 24px;
+    }
+    @include desktop-up {
+      padding-left: 35px;
+    }
+  }
+  &__button {
+    display: none;
+  }
 }
 
-.main__title {
-  height: 40px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.title__highlight {
-  width: 4px;
-  border-radius: 0px 4px 4px 0px;
-  background-color: $turquoise;
-}
-.title__text {
-  width: 300px;
-  padding-left: 12px;
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 40px;
-  letter-spacing: -0.6px;
-}
-.main__button {
-  display: none;
-}
 .slide-menu__conteiner {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 0 16px;
+  padding-left: 16px;
+  @include tablet-up {
+    padding-left: 24px;
+  }
+  @include desktop-up {
+    padding-left: 34px;
+    padding-right: 22px;
+  }
 }
 .slide-menu {
   display: flex;
@@ -173,12 +189,12 @@
   .main {
     gap: 32px;
   }
-  .title__text {
-    padding-left: 20px;
-  }
-  .slide-menu__conteiner {
-    padding: 0 24px;
-  }
+  // .title__text {
+  //   padding-left: 20px;
+  // }
+  // .slide-menu__conteiner {
+  //   padding: 0 24px;
+  // }
   .main__about {
     min-width: 720px;
     min-height: 208px;
@@ -211,9 +227,9 @@
     padding-top: 42px;
     gap: 8px;
   }
-  .title__text {
-    padding-left: 30px;
-  }
+  // .title__text {
+  //   padding-left: 30px;
+  // }
   .buttons__container {
     align-self: end;
     justify-self: end;
@@ -236,9 +252,9 @@
   .slide-menu {
     flex-wrap: wrap;
   }
-  .slide-menu__conteiner {
-    padding: 0 32px;
-  }
+  // .slide-menu__conteiner {
+  //   padding: 0 32px;
+  // }
   .main__about {
     min-width: 956px;
     gap: 36px;
