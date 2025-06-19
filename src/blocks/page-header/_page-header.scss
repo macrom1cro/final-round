@@ -1,4 +1,5 @@
 @use "../../scss/vars" as *;
+@use "../../scss/mixins" as *;
 
 .header {
   width: 100%;
@@ -13,29 +14,34 @@
   justify-content: space-between;
   padding: 0 16px;
   transition: min-width 1s ease-out;
-  &__conteiner {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: end;
-    gap: 20px;
-  }
-  &__conteiner-left {
-    width: 172px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-  &__conteiner-middle {
+  @include desktop-up {
     display: none;
   }
-  &__conteiner-right {
-    width: 96px;
+  @include tablet-up {
+    padding: 0 24px;
+  }
+  &__conteiner {
+    // width: 290px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    @include tablet-up {
+      gap: 20px;
+    }
+    &_left {
+      width: 172px;
+    }
+    &_middle {
+      display: none;
+      @include tablet-up {
+        width: 152px;
+        display: flex;
+      }
+    }
+    &_right {
+      width: 96px;
+    }
   }
   &__button {
     width: 40px;
@@ -53,62 +59,39 @@
     &_checkstatus {
       background-image: url("../img/checkstatus.svg");
     }
+    &_call {
+      background-image: url("../img/call.svg");
+    }
+    &_chat {
+      background-image: url("../img/chat.svg");
+    }
+    &_profile {
+      background-image: url("../img/profile.svg");
+    }
   }
-  
-}
-
-// .button {
-//   &__burger {
-//     background-image: url("../img/burger.svg");
-//   }
-//   &__repair {
-//     background-image: url("../img/repair.svg");
-//   }
-//   &__checkstatus {
-//     background-image: url("../img/checkstatus.svg");
-//   }
-// }
-
-.header__divider {
-  width: 2px;
-  height: 32px;
-  border-radius: 1px;
-  background-color: $button-background;
-}
-.header__logo {
-  width: 96px;
-  height: 50px;
-  background-size: cover;
-  background-image: url("../img/logo.svg");
-}
-
-@media (min-width: 1120px) {
-  .header {
-    display: none;
+  &__divider {
+    width: 2px;
+    height: 32px;
+    border-radius: 1px;
+    background-color: $button-background;
+    &_right {
+      display: none;
+      @include tablet-up {
+        display: block;
+        width: 2px;
+        height: 32px;
+        border-radius: 1px;
+        background-color: $button-background;
+      }
+    }
   }
-}
-@media (min-width: 768px) {
-  .header {
-    padding: 0 24px;
-  }
-  .button__call {
-    background-image: url("../img/call.svg");
-  }
-  .button__chat {
-    background-image: url("../img/chat.svg");
-  }
-  .button__profile {
-    background-image: url("../img/profile.svg");
-  }
-
-  .header__conteiner-middle {
-    width: 194px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .header__logo {
-    order: 1;
+  &__logo {
+    width: 96px;
+    height: 50px;
+    background-size: cover;
+    background-image: url("../img/logo.svg");
+    @include tablet-up {
+      order: 1;
+    }
   }
 }
