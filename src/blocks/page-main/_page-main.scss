@@ -1,8 +1,6 @@
 @use "../../scss/vars" as *;
 @use "../../scss/mixins" as *;
 
-
-
 .main {
   max-width: 1120px;
   display: flex;
@@ -34,7 +32,7 @@
       padding-left: 24px;
     }
     @include desktop-up {
-      padding-left: 35px;
+      padding-left: 32px;
     }
   }
   &__button {
@@ -42,53 +40,58 @@
   }
 }
 
-.slide-menu__conteiner {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  padding-left: 16px;
-  @include tablet-up {
-    padding-left: 24px;
-  }
-  @include desktop-up {
-    padding-left: 34px;
-    padding-right: 22px;
-  }
-}
 .slide-menu {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   overflow-x: auto;
   scrollbar-width: none;
-}
-
-.slide-menu__button {
-  min-width: max-content;
-  min-height: 40px;
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: -0.2px;
-  color: $gray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 16px;
-  border: 2px solid $background;
-  cursor: pointer;
-  &:hover {
-    border-radius: 6px;
-    border: 2px solid $button-active-border;
-    background-color: $background-white;
+  @include desktop-up {
+    // padding-left: 34px;
+    // padding-right: 22px;
+    flex-wrap: wrap;
+  }
+  &__conteiner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-left: 16px;
+    @include tablet-up {
+      padding-left: 24px;
+    }
+    @include desktop-up {
+      padding-left: 34px;
+      padding-right: 22px;
+    }
+  }
+  &__button {
+    min-width: max-content;
+    min-height: 40px;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.2px;
+    color: $gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 16px;
+    border: 2px solid $background;
+    cursor: pointer;
+    &:hover {
+      border-radius: 6px;
+      border: 2px solid $button-active-border;
+      background-color: $background-white;
+    }
+    &.active {
+      border-radius: 6px;
+      border: 2px solid $button-active-border;
+      background-color: $background-white;
+    }
   }
 }
-.slide-menu__button.active {
-  border-radius: 6px;
-  border: 2px solid $button-active-border;
-  background-color: $background-white;
-}
+
 .main__about {
   display: flex;
   flex-direction: column;
@@ -160,15 +163,15 @@
   .header {
     padding: 0 24px;
   }
-  .button__call {
-    background-image: url("../img/call.svg");
-  }
-  .button__chat {
-    background-image: url("../img/chat.svg");
-  }
-  .button__profile {
-    background-image: url("../img/profile.svg");
-  }
+  // .button__call {
+  //   background-image: url("../img/call.svg");
+  // }
+  // .button__chat {
+  //   background-image: url("../img/chat.svg");
+  // }
+  // .button__profile {
+  //   background-image: url("../img/profile.svg");
+  // }
 
   .header__conteiner-middle {
     width: 194px;
@@ -243,9 +246,9 @@
     letter-spacing: -0.2px;
     text-align: right;
   }
-  .slide-menu {
-    flex-wrap: wrap;
-  }
+  // .slide-menu {
+  //   flex-wrap: wrap;
+  // }
   // .slide-menu__conteiner {
   //   padding: 0 32px;
   // }

@@ -31,7 +31,7 @@
 }
 
 @mixin desktop-up {
-  @media (mix-width: $desktop-min) {
+  @media (min-width: $desktop-min) {
     @content;
   }
 }

@@ -21,14 +21,10 @@
     padding: 0 24px;
   }
   &__conteiner {
-    // width: 290px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    @include tablet-up {
-      gap: 20px;
-    }
     &_left {
       width: 172px;
     }
@@ -41,6 +37,11 @@
     }
     &_right {
       width: 96px;
+    }
+    &_bundle {
+      @include tablet-up {
+        gap: 20px;
+      }
     }
   }
   &__button {
