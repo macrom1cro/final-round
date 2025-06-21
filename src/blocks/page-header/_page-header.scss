@@ -25,12 +25,17 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    transition: width 1s ease-in;
     &_left {
-      width: 172px;
+      width: 150px;
+      @include mobile-midle {
+        transition: width 1s ease-out;
+        width: 178px;
+      }
     }
     &_middle {
-      display: none;
-      @include tablet-up {
+      width: 0;
+      @include mobile-midle {
         width: 152px;
         display: flex;
       }
@@ -39,35 +44,17 @@
       width: 96px;
     }
     &_bundle {
-      @include tablet-up {
-        gap: 20px;
-      }
+      gap: 20px;
     }
   }
   &__button {
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 20px;
-    background-size: cover;
-    cursor: pointer;
-    &_burger {
-      background-image: url("../img/burger.svg");
-    }
-    &_repair {
-      background-image: url("../img/repair.svg");
-    }
-    &_checkstatus {
-      background-image: url("../img/checkstatus.svg");
-    }
-    &_call {
-      background-image: url("../img/call.svg");
-    }
-    &_chat {
-      background-image: url("../img/chat.svg");
-    }
-    &_profile {
-      background-image: url("../img/profile.svg");
+    transform: rotate(360deg);
+    transition: all 1s ease-in-out;
+    opacity: 0;
+    @include mobile-midle {
+      opacity: 1;
+      transition: all 1s ease-in-out;
+      transform: rotate(-360deg);
     }
   }
   &__divider {
@@ -75,14 +62,16 @@
     height: 32px;
     border-radius: 1px;
     background-color: $button-background;
-    &_right {
-      display: none;
-      @include tablet-up {
+    &_left {
+      opacity: 0;
+      @include mobile-midle {
         display: block;
         width: 2px;
         height: 32px;
         border-radius: 1px;
         background-color: $button-background;
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
       }
     }
   }

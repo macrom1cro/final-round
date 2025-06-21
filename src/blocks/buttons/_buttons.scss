@@ -1,0 +1,20 @@
+.button {
+  &_burger {
+    background-image: url("../img/burger.svg");
+  }
+  &_repair {
+    background-image: url("../img/repair.svg");
+  }
+  &_checkstatus {
+    background-image: url("../img/checkstatus.svg");
+  }
+  &_call {
+    background-image: url("../img/call.svg");
+  }
+  &_chat {
+    background-image: url("../img/chat.svg");
+  }
+  &_profile {
+    background-image: url("../img/profile.svg");
+  }
+}

@@ -77,41 +77,21 @@ input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder,
 input::-moz-placeholder,
 textarea::-moz-placeholder {
-  color: var(--gray);
+  color: $gray;
 }
 
-input:focus,
-textarea:focus {
-  outline: none;
-}
-
-footer {
-  background: var(--footer-background);
-}
-
-.is--hidden {
-  display: none !important;
-}
-
-.btn--reset {
-  padding: 0;
+.button {
+  width: 40px;
+  height: 40px;
   border: none;
-  background-color: transparent;
+  border-radius: 20px;
+  background-size: cover;
   cursor: pointer;
-}
-
-.btn:active,
-.btn:focus {
-  outline: none;
-}
-
-.error {
-  border: 2px var(--error-red) solid !important;
 }
 
 .container {
   min-width: 320px;
-  max-width: 1120px;
+  max-width: 1440px;
   display: flex;
   flex-direction: column;
   gap: 24px;
