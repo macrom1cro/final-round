@@ -25,11 +25,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    transition: width 1s ease-in;
+    transition: width 0.5s ease-in;
     &_left {
       width: 150px;
       @include mobile-midle {
-        transition: width 1s ease-out;
+        transition: width 0.5s ease-out;
         width: 178px;
       }
     }

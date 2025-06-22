@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   gap: 24px;
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
   @include tablet-up {
     gap: 32px;
   }
@@ -15,17 +15,26 @@
     padding-top: 42px;
     gap: 8px;
   }
+  &__container-buttons {
+    @include desktop-up {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 32px;
+    }
+  }
   &__title {
     height: 40px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding-right: 32px;
   }
   &__title-highlight {
     width: 4px;
     border-radius: 0px 4px 4px 0px;
     background-color: $turquoise;
-    @include desktop {
+    @include desktop-up {
       border-radius: 4px;
     }
   }
@@ -44,13 +53,12 @@
     }
   }
   &__button {
-    // transition: transform 0.5s ease;
     display: none;
     @include desktop-up {
-      padding-right: 32px;
       display: flex;
       flex-direction: row;
       align-items: center;
+      gap: 8px;
     }
   }
   &__about {
@@ -72,7 +80,6 @@
       gap: 36px;
       padding: 0 32px;
     }
-    // padding: 0 32px;
   }
 }
 
@@ -83,8 +90,6 @@
   overflow-x: auto;
   scrollbar-width: none;
   @include desktop-up {
-    // padding-left: 34px;
-    // padding-right: 22px;
     flex-wrap: wrap;
   }
   &__conteiner {
@@ -99,8 +104,6 @@
     }
     @include desktop-up {
       padding: 0 32px;
-      // padding-left: 34px;
-      // padding-right: 22px;
     }
   }
   &__button {
@@ -118,7 +121,6 @@
     cursor: pointer;
     &:hover {
       border-radius: 6px;
-      // border: 2px solid $button-active-border;
       background-color: $background-white;
     }
     &.active {
@@ -151,10 +153,8 @@
     flex-direction: column;
     justify-content: space-evenly;
     overflow: hidden;
-    // transition: all 1s ease-out;
-    gap: 20px;
-    animation: eye ease-in-out infinite;
-    // transition: hei 1s ease-in-out;
+    gap: 21px;
+    transition: max-height 0.3s ease;
     @include tablet-up {
       min-width: 312px;
       max-height: 150px;
@@ -164,20 +164,12 @@
       width: 490px;
       max-height: 145px;
     }
-    @keyframes eye {
-      from {
-        max-height: 90px;
-        transition: all 1s ease-out;
-      }
-      to {
-        max-height: max-content;
-      }
+    &.active {
+      transition: max-height 0.8s ease;
+      max-height: 100vh;
     }
   }
-  &__text.active {
-    // transition: height 1s ease-out;
-    max-height: max-content;
-  }
+
   &__image {
     max-width: 100%;
     @include tablet-up {
@@ -224,20 +216,12 @@
     cursor: pointer;
   }
 }
-.buttons {
-  &__container {
-    @include desktop-up {
-      display: flex;
-      align-self: end;
-      justify-self: end;
-    }
-    &__text {
-      padding-right: 8px;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 24px;
-      letter-spacing: -0.2px;
-      text-align: right;
-    }
+.button {
+  &__text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    text-align: right;
   }
 }

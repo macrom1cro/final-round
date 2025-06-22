@@ -8,7 +8,12 @@ function initSlider() {
   if (sliderInit) return;
 
   swiper = new Swiper(".swiper", {
-    breakpoints: { 768: { enabled: false } },
+    breakpoints: {
+      768: {
+        enabled: false,
+        pagination: false,
+      },
+    },
     slidesPerView: "auto",
     slidesOffsetBefore: 16,
     slidesOffsetAfter: 16,
@@ -42,13 +47,13 @@ function handleResize() {
 window.addEventListener("load", checkWidth);
 window.addEventListener("resize", handleResize);
 
-document.querySelectorAll(".read-more__text1").forEach(btn =>
+document.querySelectorAll(".show-all__text").forEach(btn =>
   btn.addEventListener("click", e => {
     btn.textContent = e.target.previousElementSibling.classList.toggle("active")
       ? "Скрыть"
       : "Показать все";
     e.target
-      .closest(".show__all")
+      .closest(".show-all")
       .previousElementSibling.classList.toggle("active");
   })
 );

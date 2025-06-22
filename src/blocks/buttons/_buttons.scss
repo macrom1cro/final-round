@@ -17,4 +17,13 @@
   &_profile {
     background-image: url("../img/profile.svg");
   }
+  &_dropdown {
+    background-image: url("../img/dropdown.svg");
+  }
+  &__close {
+    background-image: url("../img/close.svg");
+  }
+  &.button__search {
+    background-image: url("../img/search.svg");
+  }
 }
