@@ -1,23 +1,54 @@
 @use "../../scss/vars" as *;
 @use "../../scss/mixins" as *;
 
+.container {
+  // &_burger-menu {
+  //   position: absolute;
+  //   width: 100%;
+  //   height: 100%;
+  //   z-index: 2;
+  // }
+  &_blur {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.96;
+    z-index: 2;
+    background: $background-white;
+    @include desktop {
+      display: none;
+    }
+  }
+}
 .burger-menu {
+  position: absolute;
+  
   width: 100%;
   min-width: 320px;
-  // height: 1024px;
+  height: 676px;
   max-width: 320px;
   padding: 0 24px;
-  position: absolute;
   left: 0;
   display: flex;
   flex-direction: column;
   box-shadow: 16px 0px 52px 0px #0e185033;
   background: $background-white;
-  // gap: 32px;
+  scrollbar-width: none;
   transition: all 0.5s ease-in-out;
-  z-index: 1;
+  z-index: 3;
+
   @include mobile {
     max-width: 360px;
+    transition: all 0.5s ease-in-out;
+  }
+  @include tablet-up {
+    height: 1024px;
+    transition: all 0.5s ease-in-out;
+  }
+  @include desktop {
+    position: static;
+    height: 100vh;
+    box-shadow: none;
     transition: all 0.5s ease-in-out;
   }
 
@@ -29,7 +60,6 @@
     justify-content: center;
     background: $background-white;
     justify-content: space-between;
-    // transition: max-width 5s ease-in-out;
   }
   &__conteiner_header {
     display: flex;
@@ -41,7 +71,8 @@
     }
   }
   &__main {
-    height: 396px;
+    padding-top: 4px;
+    padding-bottom: 32px;
   }
   &__navigation {
     display: flex;
@@ -49,6 +80,9 @@
     align-items: start;
     justify-content: space-evenly;
     gap: 24px;
+    @include tablet-up {
+      gap: 32px;
+    }
   }
   &__title {
     height: 32px;
@@ -97,10 +131,10 @@
     }
   }
   &__futer {
-    height: 220px;
+    // height: 188px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 8px;
   }
   &__contacts {
     height: 124px;
@@ -123,6 +157,7 @@
     letter-spacing: -0.2px;
   }
   &__phone-number {
+    height: 32px;
     font-weight: 700;
     font-size: 24px;
     line-height: 32px;
@@ -135,5 +170,15 @@
     justify-content: start;
     list-style-type: none;
     gap: 7px;
+  }
+}
+.button {
+  &__close {
+    background-image: url("../img/close.svg");
+    &_burger-menu {
+      @include desktop-up {
+        display: none;
+      }
+    }
   }
 }
