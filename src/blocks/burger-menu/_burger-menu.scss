@@ -2,31 +2,31 @@
 @use "../../scss/mixins" as *;
 
 .container {
-  // &_burger-menu {
-  //   position: absolute;
-  //   width: 100%;
-  //   height: 100%;
-  //   z-index: 2;
-  // }
   &_blur {
+    visibility: hidden;
     position: absolute;
     width: 100%;
     height: 100%;
-    opacity: 0.96;
+    opacity: 0;
     z-index: 2;
     background: $background-white;
-    @include desktop {
-      display: none;
+
+    &.active {
+      visibility: visible;
+      opacity: 0.96;
+      // @include notebook-up {
+      //   visibility: hidden;
+      // }
     }
   }
 }
 .burger-menu {
+  visibility: hidden;
   position: absolute;
-  
   width: 100%;
   min-width: 320px;
-  height: 676px;
   max-width: 320px;
+  min-height: 676px;
   padding: 0 24px;
   left: 0;
   display: flex;
@@ -36,20 +36,47 @@
   scrollbar-width: none;
   transition: all 0.5s ease-in-out;
   z-index: 3;
+  transform: translatex(-320px);
+  // display: none;
 
   @include mobile {
     max-width: 360px;
     transition: all 0.5s ease-in-out;
+    transform: translatex(-360px);
   }
   @include tablet-up {
-    height: 1024px;
+    min-height: 1024px;
+    transition: all 0.5s ease-in-out;
+    // transform: translatex(0);
+  }
+  @include notebook-up {
+    visibility: visible;
+    position: static;
+    min-height: 100%;
+    box-shadow: none;
+    transform: translatex(0);
     transition: all 0.5s ease-in-out;
   }
-  @include desktop {
-    position: static;
-    height: 100vh;
-    box-shadow: none;
-    transition: all 0.5s ease-in-out;
+  &.active {
+    visibility: visible;
+    transform: translatex(0);
+    // @include notebook-up {
+    //   visibility: hidden;
+    // }
+    // position: absolute;
+    // width: 100%;
+    // min-width: 320px;
+    // max-width: 320px;
+    // min-height: 676px;
+    // padding: 0 24px;
+    // left: 0;
+    // display: flex;
+    // flex-direction: column;
+    // box-shadow: 16px 0px 52px 0px #0e185033;
+    // background: $background-white;
+    // scrollbar-width: none;
+    // transition: all 0.5s ease-in-out;
+    // z-index: 3;
   }
 
   &__header {
@@ -61,18 +88,22 @@
     background: $background-white;
     justify-content: space-between;
   }
-  &__conteiner_header {
+  &__conteiner {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     &_header {
-      width: 156px;
+      gap: 16px;
     }
   }
   &__main {
     padding-top: 4px;
     padding-bottom: 32px;
+    @include tablet-up {
+      padding-top: 28px;
+      padding-bottom: 268px;
+    }
   }
   &__navigation {
     display: flex;
@@ -172,12 +203,26 @@
     gap: 7px;
   }
 }
+
 .button {
   &__close {
-    background-image: url("../img/close.svg");
     &_burger-menu {
-      @include desktop-up {
+      // transition: all 4s ease-in-out;
+      @include notebook-up {
         display: none;
+        // transition: all 4s ease-in-out;
+        // animation: close 1s;
+        // @keyframes close {
+        //   from {
+        //     opacity: 1;
+        //     display: block;
+        //   }
+
+        //   to {
+        //     opacity: 0;
+        //     display: none;
+        //   }
+        // }
       }
     }
   }

@@ -35,14 +35,14 @@
   }
 }
 
-@mixin desktop {
-  @media (min-width: $desktop-min) {
+@mixin notebook-up {
+  @media (min-width: $notebook-min) {
     @content;
   }
 }
 
 @mixin desktop-up {
-  @media (min-width: $desktop-max) {
+  @media (min-width: $desktop-min) {
     @content;
   }
 }

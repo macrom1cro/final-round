@@ -31,15 +31,18 @@
   &__wrapper {
     @include tablet-up {
       display: grid;
-      grid-template-columns: repeat(3, 224px);
+      // grid-template-columns: repeat(3, 224px);
+      grid-template-columns: repeat(auto-fit, minmax(224px, max-content));
       justify-items: center;
       align-items: center;
       gap: 16px 24px;
+      transition: all 0.8s ease;
     }
     @include desktop-up {
       display: grid;
       grid-template-columns: repeat(4, 240px);
       gap: 16px 32px;
+      transition: all 0.8s ease;
     }
   }
   &__slide {
@@ -126,5 +129,6 @@
     font-weight: 500;
     font-size: 16px;
     letter-spacing: -0.2px;
+    cursor: pointer;
   }
 }

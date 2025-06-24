@@ -24,14 +24,13 @@ html *,
 }
 
 body {
-  margin: auto;
+  // margin: auto;
   min-width: 320px;
   // max-width: 1400px;
-  min-height: 100vh;
+  // height: 100vh;
   display: flex;
   position: relative;
   justify-content: center;
-  min-height: 100vh;
   font-family: "TT Lakes";
   color: $black;
   background-color: $background;
@@ -97,6 +96,7 @@ textarea::-moz-placeholder {
   position: relative;
   min-width: 320px;
   max-width: 1440px;
+  // height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 24px;
