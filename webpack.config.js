@@ -47,6 +47,9 @@ const plugins = () => {
   const basePlugins = [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src/index.html"),
+      templateParameters: {
+        baseHref: isProd ? `/${project_name}/` : "/",
+      },
       filename: "index.html",
       minify: {
         collapseWhitespace: isProd,
@@ -59,7 +62,15 @@ const plugins = () => {
       patterns: [
         {
           from: path.resolve(__dirname, "src/assets"),
-          to: path.resolve(__dirname, "app/assets"),
+          to: path.resolve(__dirname, "app"),
+        },
+        {
+          from: path.resolve(__dirname, "src/.nojekyll"), // Создайте пустой файл в src/
+          to: path.resolve(__dirname, "app"),
+        },
+        {
+          from: path.resolve(__dirname, "src/index.html"),
+          to: path.resolve(__dirname, "app/404.html"), // Для SPA
         },
       ],
     }),
@@ -76,10 +87,16 @@ module.exports = {
     filename: `./js/${filename("js")}`,
     path: path.resolve(__dirname, "app"),
     clean: true,
-    publicPath: "",
+    publicPath: isProd ? `/${project_name}/` : "/",
   },
   devServer: {
-    historyApiFallback: true,
+    historyApiFallback: {
+      index: isProd ? `/${project_name}/` : "/",
+    },
+    static: {
+      directory: path.join(__dirname, "app"),
+      publicPath: isProd ? `/${project_name}/` : "/",
+    },
     open: true,
     compress: true,
     hot: true,
@@ -115,7 +132,19 @@ module.exports = {
               publicPath: "../",
             },
           },
-          "css-loader",
+          {
+            loader: "css-loader",
+            options: {
+              url: {
+                filter: url => {
+                  if (url.startsWith("data:") || url.startsWith("http")) {
+                    return false;
+                  }
+                  return true;
+                },
+              },
+            },
+          },
           {
             loader: "sass-loader",
             options: {
@@ -137,9 +166,7 @@ module.exports = {
         test: /\.(?:|jpe?g|png|gif|svg|ico)$/i,
         type: "asset/resource",
         generator: {
-          filename: () => {
-            return isDev ? "img/[name][ext]" : "img/[name].[contenthash][ext]";
-          },
+          filename: "img/[name].[contenthash][ext]",
         },
       },
       {
