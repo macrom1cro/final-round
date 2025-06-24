@@ -1,8 +1,0 @@
-/node_modules/
-/dist/
-/app/
-.DS_Store
-*.log
-webpack.dev.config.js
-*.tmp.js
-*.map
