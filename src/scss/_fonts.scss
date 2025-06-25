@@ -1,4 +1,4 @@
-@use "./mixins/font-face" as *;
+@use "mixins/font-face" as *;
 
 @include font-face("TT Lakes", "TTLakes-Bold", bold);
 @include font-face("TT Lakes", "TTLakes-Medium", 500);

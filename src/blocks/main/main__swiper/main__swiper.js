@@ -1,13 +1,13 @@
 import Swiper from "swiper/bundle";
 // Объявляем переменную swiper в глобальной области видимости
-let swiper;
+const swipers = {};
 let sliderInit = false;
 const mediaSize = 767;
 
-function initSlider() {
-  if (sliderInit) return;
+function initSlider(container) {
+  if (swipers[container.id]) return;
 
-  swiper = new Swiper(".swiper", {
+  swipers[container.id] = new Swiper(container, {
     breakpoints: {
       768: {
         enabled: false,
@@ -24,29 +24,43 @@ function initSlider() {
 
   sliderInit = true;
 }
+function destroySlider(container) {
+  if (!swipers[container.id]) return;
 
-function destroySlider() {
-  if (!sliderInit || !swiper) return;
-
-  swiper.destroy(true, true); // Полное уничтожение с очисткой всех событий
-  swiper = null;
-  sliderInit = false;
+  swipers[container.id].destroy();
+  delete swipers[container.id];
 }
 
-function checkWidth() {
-  window.innerWidth <= mediaSize ? initSlider() : destroySlider();
+// Проверяем состояние всех слайдеров
+function checkSliders() {
+  document.querySelectorAll(".swiper").forEach(container => {
+    if (window.innerWidth <= mediaSize) {
+      initSlider(container);
+    } else {
+      destroySlider(container);
+    }
+  });
 }
 
-// Добавляем троттлинг для оптимизации
+// Оптимизация ресайза
 let resizeTimeout;
 function handleResize() {
   clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(checkWidth, 30);
+  resizeTimeout = setTimeout(checkSliders, 100);
 }
 
-window.addEventListener("load", checkWidth);
+// Инициализация
+window.addEventListener("load", () => {
+  // Добавляем уникальные ID если их нет
+  document.querySelectorAll(".swiper").forEach((container, i) => {
+    if (!container.id) container.id = `swiper-${i}`;
+  });
+  checkSliders();
+});
+
 window.addEventListener("resize", handleResize);
 
+// Обработчики для кнопок "Показать все" (без изменений)
 document.querySelectorAll(".show-all__text").forEach(btn =>
   btn.addEventListener("click", e => {
     btn.textContent = e.target.previousElementSibling.classList.toggle("active")
@@ -57,3 +71,4 @@ document.querySelectorAll(".show-all__text").forEach(btn =>
       .previousElementSibling.classList.toggle("active");
   })
 );
+
