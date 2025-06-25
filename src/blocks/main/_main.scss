@@ -1,0 +1,228 @@
+@use "../../scss/vars" as *;
+@use "../../scss/mixins" as *;
+
+.main {
+  max-width: 1120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 24px;
+  transition: all 0.5s ease-in-out;
+  @include tablet-up {
+    gap: 32px;
+  }
+  @include notebook-up {
+    padding-top: 42px;
+    gap: 8px;
+  }
+  &__container-buttons {
+    @include notebook-up {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 32px;
+    }
+  }
+  &__title {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 32px;
+  }
+  &__title-highlight {
+    width: 4px;
+    border-radius: 0px 4px 4px 0px;
+    background-color: $turquoise;
+    @include desktop-up {
+      border-radius: 4px;
+    }
+  }
+  &__title-text {
+    width: 300px;
+    padding-left: 16px;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: -0.6px;
+    @include tablet-up {
+      padding-left: 24px;
+    }
+    @include desktop-up {
+      padding-left: 32px;
+    }
+  }
+  &__button {
+    display: none;
+    @include notebook-up {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+  &__about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    @include tablet-up {
+      min-width: 720px;
+       min-width: 720px;
+      min-height: 208px;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-evenly;
+      padding: 0 24px;
+      gap: 48px;
+    }
+    @include desktop-up {
+      min-width: 956px;
+      gap: 36px;
+      padding: 0 32px;
+    }
+  }
+}
+
+.slide-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow-x: auto;
+  scrollbar-width: none;
+  @include desktop-up {
+    flex-wrap: wrap;
+  }
+  &__conteiner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-left: 16px;
+    @include tablet-up {
+      padding-left: 24px;
+    }
+    @include desktop-up {
+      padding: 0 32px;
+    }
+  }
+  &__button {
+    min-width: max-content;
+    min-height: 40px;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.2px;
+    color: $gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 16px;
+    border: 2px solid $background;
+    cursor: pointer;
+    &:hover {
+      border-radius: 6px;
+      background-color: $background-white;
+    }
+    &.active {
+      border-radius: 6px;
+      border: 2px solid $button-active-border;
+      background-color: $background-white;
+    }
+  }
+}
+
+.about {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+    gap: 16px;
+    @include tablet-up {
+      padding: 0;
+      gap: 10px;
+    }
+    @include desktop-up {
+      padding: 0;
+      gap: 14px;
+    }
+  }
+  &__text {
+    min-width: 288px;
+    max-height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    overflow: hidden;
+    gap: 21px;
+    transition: max-height 0.3s ease;
+    @include tablet-up {
+      min-width: 312px;
+      max-height: 150px;
+      line-height: 18px;
+    }
+    @include desktop-up {
+      width: 490px;
+      max-height: 145px;
+    }
+    &.active {
+      transition: max-height 0.8s ease;
+      max-height: 100vh;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+    @include tablet-up {
+      max-width: 50%;
+      border-radius: 6px;
+    }
+    @include desktop-up {
+      max-width: 531px;
+      height: 307px;
+    }
+  }
+}
+
+.read-more {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: $black;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-start;
+  gap: 8px;
+  &__expand {
+    width: 24px;
+    height: 24px;
+    background-image: url("../img/expand.svg");
+    background-size: cover;
+    transition: transform 0.5s ease;
+    &.active {
+      transition: transform 0.5s ease;
+      transform: rotate(180deg);
+    }
+  }
+  &__text {
+    width: 100px;
+    height: 24px;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.2px;
+    cursor: pointer;
+  }
+}
+.button {
+  &__text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    text-align: right;
+  }
+}

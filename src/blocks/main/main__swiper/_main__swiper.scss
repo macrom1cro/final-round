@@ -1,0 +1,140 @@
+@use "../../../scss/vars" as *;
+@use "swiper/css/bundle" as *;
+@use "../../../scss/mixins" as *;
+
+.main__swiper {
+  &_brands {
+  }
+}
+.swiper-brands {
+  padding-top: 16px;
+  min-height: 116px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: max-height 0.3s ease;
+  @include tablet-up {
+    padding: 24px 24px;
+    max-height: 199px;
+    overflow: hidden;
+    margin: 0;
+  }
+  @include desktop-up {
+    padding: 24px 32px;
+  }
+  &.active {
+    @include tablet-up {
+      max-height: 100vh;
+      transition: max-height 0.8s ease;
+    }
+  }
+  &__wrapper {
+    @include tablet-up {
+      display: grid;
+      // grid-template-columns: repeat(3, 224px);
+      grid-template-columns: repeat(auto-fit, minmax(224px, max-content));
+      justify-items: center;
+      align-items: center;
+      gap: 16px 24px;
+      transition: all 0.8s ease;
+    }
+    @include desktop-up {
+      display: grid;
+      grid-template-columns: repeat(4, 240px);
+      gap: 16px 32px;
+      transition: all 0.8s ease;
+    }
+  }
+  &__slide {
+    max-width: 240px;
+    @include tablet-up {
+      max-width: 224px;
+    }
+    @include desktop-up {
+      max-width: 240px;
+    }
+  }
+  &__card {
+    width: 240px;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    border-radius: 6px;
+    border-width: 1px;
+    border: 1px solid $button-background;
+    background-color: $background-white;
+    @include tablet-up {
+      width: 224px;
+    }
+    @include desktop-up {
+      width: 240px;
+    }
+  }
+  &__container {
+    width: 192px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__line {
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 82px;
+    top: 12px;
+    right: 0;
+    background: linear-gradient(
+      270deg,
+      $background 16.84%,
+      rgba(248, 248, 248, 0.0001) 100%
+    );
+    z-index: 10000;
+    @include tablet-up {
+      display: none;
+    }
+  }
+  &__pagination {
+    display: flex;
+    position: static;
+    justify-content: center;
+    @include tablet-up {
+      display: none;
+    }
+  }
+}
+.show-all {
+  display: none;
+  @include tablet-up {
+    display: flex;
+    padding-left: 32px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    white-space: nowrap;
+    color: $black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    gap: 8px;
+  }
+  &__expand {
+    width: 24px;
+    height: 24px;
+    background-image: url("../img/expand.svg");
+    background-size: cover;
+    transition: transform 0.5s ease;
+    &.active {
+      transition: transform 0.5s ease;
+      transform: rotate(180deg);
+    }
+  }
+  &__text {
+    height: 24px;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.2px;
+    cursor: pointer;
+  }
+}

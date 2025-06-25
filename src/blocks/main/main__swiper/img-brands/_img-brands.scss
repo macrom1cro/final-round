@@ -1,0 +1,50 @@
+.img-brands {
+  &_lenovo {
+    width: 108px;
+    height: 32px;
+    background-size: cover;
+    background: url("../img/lenovo.svg");
+  }
+  &_samsung {
+    width: 116px;
+    height: 38px;
+    background-size: cover;
+    background: url("../img/samsung.svg");
+  }
+  &_apple {
+    width: 44px;
+    height: 44px;
+    background-size: cover;
+    background: url("../img/apple.svg");
+  }
+  &_bosch {
+    width: 128px;
+    height: 29px;
+    background-size: cover;
+    background: url("../img/bosch.svg");
+  }
+  &_hp {
+    width: 52px;
+    height: 52px;
+    background-size: cover;
+    background: url("../img/hp.svg");
+  }
+  &_acer {
+    width: 92px;
+    height: 24px;
+    background-size: cover;
+    background: url("../img/acer.svg");
+  }
+  &_view-sonic {
+    width: 128px;
+    height: 21px;
+    background-size: cover;
+    background: url("../img/viewSonic.svg");
+  }
+  &_sony {
+    width: 128px;
+    height: 26px;
+    background-size: cover;
+    background: url("../img/sony.svg");
+  }
+}

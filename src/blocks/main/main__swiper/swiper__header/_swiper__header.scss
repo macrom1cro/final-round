@@ -1,0 +1,33 @@
+@use "../../../../scss/vars" as *;
+@use "../../../../scss/mixins" as *;
+
+.swiper {
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    height: 80px;
+    border-top: 1px solid;
+    border-color: $header-border;
+    background: linear-gradient(90deg, $background 0%, $background-white 100%);
+    @include tablet-up {
+      height: 80px;
+    }
+  }
+  &__title {
+    padding-left: 16px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    text-transform: uppercase;
+    color: $gray;
+    @include tablet-up {
+      padding-left: 24px;
+    }
+    @include desktop-up {
+      padding-left: 32px;
+    }
+  }
+}
