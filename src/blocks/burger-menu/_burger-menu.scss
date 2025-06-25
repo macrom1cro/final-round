@@ -192,7 +192,7 @@
 }
 
 .button {
-  &__close {
+  &_close {
     &_burger-menu {
       @include notebook-up {
         display: none;

@@ -12,7 +12,10 @@
     border-color: $header-border;
     background: linear-gradient(90deg, $background 0%, $background-white 100%);
     @include tablet-up {
-      height: 80px;
+      height: 56px;
+    }
+    &_price {
+      height: 56px;
     }
   }
   &__title {

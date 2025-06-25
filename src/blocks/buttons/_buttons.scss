@@ -1,3 +1,5 @@
+@use "../../scss/vars" as *;
+
 .button {
   transition: opacity 0.3s ease-in-out;
   &:hover {
@@ -25,10 +27,16 @@
   &_dropdown {
     background-image: url("../img/dropdown.svg");
   }
-  &__close {
+  &_close {
     background-image: url("../img/close.svg");
   }
-  &.button__search {
+  &_search {
     background-image: url("../img/search.svg");
+  }
+  &_order {
+    width: 119px;
+    height: 32px;
+    border-radius: 16px;
+    background-color: $pink;
   }
 }

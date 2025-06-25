@@ -4,19 +4,20 @@
 
 .swiper-technics {
   padding-top: 16px;
-  min-height: 199px;
+  min-height: 204px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: max-height 0.3s ease;
   @include tablet-up {
-    padding: 24px 24px;
-    max-height: 199px;
+    padding: 24px 24px 0;
+    min-height: 184px;
+    max-height: 184px;
     overflow: hidden;
     margin: 0;
   }
   @include desktop-up {
-    padding: 24px 32px;
+    padding: 24px 32px 0;
   }
   &.active {
     @include tablet-up {
