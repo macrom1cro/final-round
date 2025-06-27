@@ -1,22 +1,24 @@
 @use "../../../../scss/vars" as *;
-// @use "swiper/css/bundle" as *;
+@use "swiper/css/bundle" as *;
 @use "../../../../scss/mixins" as *;
 
 .swiper-price {
+  //  position: relative;
   padding-top: 16px;
+  // min-height: 304px;
   min-height: 244px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: max-height 0.3s ease;
   @include tablet-up {
-    padding: 24px 24px 0;
-    max-height: 224px;
-    overflow: hidden;
-    margin: 0;
+    // position: relative;
+    padding: 32px 24px 0;
+    // min-width: 720px;
+    width: 100%;
   }
   @include desktop-up {
-    padding: 24px 32px 0;
+    padding: 32px 32px 0;
   }
   &.active {
     @include tablet-up {
@@ -26,58 +28,85 @@
   }
   &__wrapper {
     @include tablet-up {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(224px, max-content));
-      justify-items: center;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 16px 24px;
-      transition: all 0.8s ease;
+      width: 100%;
+      background-color: $background-white;
+      border-radius: 6px;
     }
     @include desktop-up {
-      display: grid;
-      grid-template-columns: repeat(4, 240px);
-      gap: 16px 32px;
-      transition: all 0.8s ease;
     }
   }
   &__slide {
     max-width: 260px;
     @include tablet-up {
-      max-width: 224px;
+      max-width: 100%;
     }
-    @include desktop-up {
-      max-width: 240px;
+    // @include desktop-up {
+    //   max-width: 240px;
+    // }
+    &_header {
+      display: none;
+      @include tablet-up {
+        position: static;
+        padding: 0 16px;
+        display: grid;
+        grid-template-columns:
+          minmax(10px, 3fr) minmax(10px, 0.8fr) minmax(10px, 0.8fr)
+          minmax(10px, 1fr);
+        width: 100%;
+        height: 32px;
+      }
+      @include desktop-up {
+        grid-template-columns:
+          minmax(10px, 2fr) minmax(10px, 1fr) minmax(10px, 1fr)
+          minmax(10px, 0.5fr);
+      }
     }
   }
   &__card {
     width: 260px;
     height: 200px;
-    padding: 16px;
+    padding: 16px 16px 20px 16px;
     display: flex;
     flex-direction: column;
+    align-items: start;
     justify-content: space-between;
     border-radius: 6px;
     border-width: 1px;
     border: 1px solid $button-background;
     background-color: $background-white;
     @include tablet-up {
-      width: 224px;
+      padding: 0 16px;
+      display: grid;
+      grid-template-columns:
+        minmax(10px, 3fr) minmax(10px, 0.8fr) minmax(10px, 0.8fr)
+        minmax(10px, 1fr);
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 64px;
+      border: none;
+      border-radius: 0;
     }
     @include desktop-up {
-      width: 240px;
+      grid-template-columns:
+        minmax(10px, 2fr) minmax(10px, 1fr) minmax(10px, 1fr)
+        minmax(10px, 0.5fr);
     }
   }
   &__container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: end;
+    align-items: start;
+    gap: 4px;
   }
   &__line {
     display: block;
     position: absolute;
     width: 24px;
-    height: 168px;
+    height: 208px;
     top: 12px;
     right: 0;
     background: linear-gradient(
@@ -104,14 +133,70 @@
     font-size: 14px;
     line-height: 16px;
     letter-spacing: 0px;
+    opacity: 0.72;
+
+    @include tablet-up {
+      display: none;
+    }
+    &_header {
+      @include tablet-up {
+        display: block;
+      }
+    }
   }
   &__text {
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;
     letter-spacing: 0.2px;
+    &_down {
+      padding: 16px;
+      line-height: 20px;
+      letter-spacing: 0.2px;
+      min-width: 288px;
+      min-height: 138px;
+      @include tablet-up {
+        min-width: 421px;
+        min-height: 60px;
+      }
+    }
+    &_link {
+      display: block;
+      padding-left: 16px;
+      max-height: 55px;
+      max-width: 208px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        opacity: 0.5;
+      }
+      @include tablet-up {
+        max-height: 24px;
+        max-width: 316px;
+      }
+    }
   }
-  &__dropdown {
-    fill: $pink;
+  &__goside {
+    height: 24px;
+    width: 24px;
+  }
+  &__more {
+    position: absolute;
+    display: inline;
+    width: 24px;
+    height: 28px;
+  }
+  &__separator {
+    display: none;
+    @include tablet-up {
+      display: flex;
+      width: 95%;
+      height: 1px;
+      background-color: $button-background;
+    }
   }
 }

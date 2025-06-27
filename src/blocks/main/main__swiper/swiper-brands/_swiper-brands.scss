@@ -98,38 +98,3 @@
     }
   }
 }
-// .show-all {
-//   display: none;
-//   @include tablet-up {
-//     display: flex;
-//     padding-left: 32px;
-//     font-weight: 500;
-//     font-size: 16px;
-//     line-height: 24px;
-//     letter-spacing: -0.2px;
-//     white-space: nowrap;
-//     color: $black;
-//     text-decoration: none;
-//     border-radius: 5px;
-//     font-size: 16px;
-//     gap: 8px;
-//   }
-//   &__expand {
-//     width: 24px;
-//     height: 24px;
-//     background-image: url("../img/expand.svg");
-//     background-size: cover;
-//     transition: transform 0.5s ease;
-//     &.active {
-//       transition: transform 0.5s ease;
-//       transform: rotate(180deg);
-//     }
-//   }
-//   &__text {
-//     height: 24px;
-//     font-weight: 500;
-//     font-size: 16px;
-//     letter-spacing: -0.2px;
-//     cursor: pointer;
-//   }
-// }

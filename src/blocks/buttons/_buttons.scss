@@ -1,4 +1,5 @@
 @use "../../scss/vars" as *;
+@use "../../scss/mixins" as *;
 
 .button {
   transition: opacity 0.3s ease-in-out;
@@ -34,9 +35,26 @@
     background-image: url("../img/search.svg");
   }
   &_order {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 8px;
+    gap: 8px;
     width: 119px;
     height: 32px;
     border-radius: 16px;
     background-color: $pink;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: -0.15px;
+    text-transform: uppercase;
+    color: $background-white;
+    @include tablet-up{
+      position: static;
+    }
   }
 }
