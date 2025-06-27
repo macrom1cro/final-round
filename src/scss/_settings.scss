@@ -93,15 +93,27 @@ textarea::-moz-placeholder {
   position: relative;
   min-width: 320px;
   max-width: 1440px;
-  // height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 24px;
-
-  @media (max-width: 768px) {
-  }
-
-  @media (max-width: 320px) {
+  &__blur {
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
+    background: $background-white;
+    &_modal {
+      z-index: 4;
+    }
+    &.active {
+      visibility: visible;
+      opacity: 0.96;
+      @include notebook-up {
+        visibility: hidden;
+      }
+    }
   }
 }
 

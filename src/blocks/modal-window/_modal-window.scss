@@ -1,0 +1,129 @@
+@use "../../scss/vars" as *;
+@use "../../scss/mixins" as *;
+
+.modal-window {
+  // &_call{}
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  min-width: 320px;
+  max-width: 320px;
+  min-height: 676px;
+  padding: 0 24px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 16px 0px 52px 0px #0e185033;
+  background: $background-white;
+  scrollbar-width: none;
+  transition: all 0.5s ease-in-out;
+  z-index: 5;
+  transform: translatex(320px);
+  //   @include mobile {
+  //     max-width: 360px;
+  //     transition: all 0.5s ease-in-out;
+  //     transform: translatex(-360px);
+  //   }
+  // @include notebook-up {
+  //   min-width: 440px;
+  //   max-width: 440px;
+  //   min-height: 940px;
+  //   gap: 28px;
+  //   transform: translatex(440px);
+  //   transition: all 0.5s ease-in-out;
+  // }
+  //   @include notebook-up {
+  //     visibility: visible;
+  //     position: static;
+  //     min-height: 100%;
+  //     box-shadow: none;
+  //     transform: translatex(0);
+  //     transition: all 0.5s ease-in-out;
+  //   }
+  &.active {
+    visibility: visible;
+    transform: translatex(0);
+  }
+
+  // &__container {
+  //   display: flex;
+  //   flex-direction: row;
+  //   align-items: center;
+  //   justify-content: space-between;
+  //   &_header {
+  //     gap: 16px;
+  //   }
+  //   &_contacts {
+  //     height: 44px;
+  //     align-items: start;
+  //     justify-content: start;
+  //     gap: 16px;
+  //   }
+  // }
+  // &__main {
+  //   display: flex;
+  //   flex-direction: row;
+  //   align-items: center;
+  //   justify-content: space-between;
+  //   flex-direction: column;
+  //   align-items: start;
+  //   gap: 32px;
+  //   transition: all 0.5s ease-in-out;
+  //   @include tablet-up {
+  //     gap: 268px;
+  //   }
+  // }
+  // &__navigation {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: start;
+  //   justify-content: space-evenly;
+  //   gap: 24px;
+  //   @include tablet-up {
+  //     gap: 32px;
+  //   }
+  // }
+  // &__title {
+  //   height: 32px;
+  //   display: flex;
+  //   flex-direction: row;
+  //   align-items: center;
+  //   justify-content: space-between;
+  //   border: none;
+  //   background: $background-white;
+  //   cursor: pointer;
+  //   &.active {
+  //     height: 32px;
+  //     position: relative;
+  //     left: -4px;
+  //     display: flex;
+  //     flex-direction: row;
+  //     align-items: center;
+  //     justify-content: space-between;
+  //     border: none;
+  //     background: $background-white;
+  //     color: $gray;
+  //     cursor: pointer;
+  //     &:before {
+  //       content: "";
+  //       position: relative;
+  //       left: -20px;
+  //       width: 4px;
+  //       height: 32px;
+  //       border-radius: 0px 4px 4px 0px;
+  //       background-color: $turquoise;
+  //     }
+  //   }
+  //   &:hover {
+  //     color: $gray;
+  //   }
+  // }
+  // &__text {
+  //   font-family: "TT Lakes";
+  //   font-weight: 500;
+  //   font-size: 16px;
+  //   line-height: 24px;
+  //   letter-spacing: -0.2px;
+  // }
+}

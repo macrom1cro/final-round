@@ -3,18 +3,14 @@
 @use "../../../../scss/mixins" as *;
 
 .swiper-price {
-  //  position: relative;
   padding-top: 16px;
-  // min-height: 304px;
   min-height: 244px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: max-height 0.3s ease;
   @include tablet-up {
-    // position: relative;
     padding: 32px 24px 0;
-    // min-width: 720px;
     width: 100%;
   }
   @include desktop-up {
@@ -43,9 +39,7 @@
     @include tablet-up {
       max-width: 100%;
     }
-    // @include desktop-up {
-    //   max-width: 240px;
-    // }
+
     &_header {
       display: none;
       @include tablet-up {
@@ -150,14 +144,20 @@
     line-height: 18px;
     letter-spacing: 0.2px;
     &_down {
-      padding: 16px;
+      padding: 16px 0 16px 16px;
       line-height: 20px;
       letter-spacing: 0.2px;
       min-width: 288px;
-      min-height: 138px;
+      max-height: 138px;
       @include tablet-up {
-        min-width: 421px;
-        min-height: 60px;
+        padding: 24px 0 16px 24px;
+        max-width: 445px;
+        max-height: 100px;
+      }
+      @include desktop-up {
+        padding: 32px 0 16px 32px;
+        max-width: 451px;
+        max-height: 106px;
       }
     }
     &_link {
@@ -175,8 +175,12 @@
         opacity: 0.5;
       }
       @include tablet-up {
+        padding-left: 24px;
         max-height: 24px;
-        max-width: 316px;
+        max-width: 330px;
+      }
+      @include desktop-up {
+        padding-left: 32px;
       }
     }
   }

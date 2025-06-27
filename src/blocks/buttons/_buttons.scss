@@ -53,8 +53,15 @@
     letter-spacing: -0.15px;
     text-transform: uppercase;
     color: $background-white;
-    @include tablet-up{
+    @include tablet-up {
       position: static;
+    }
+  }
+  &_close {
+    &_burger-menu {
+      @include notebook-up {
+        display: none;
+      }
     }
   }
 }

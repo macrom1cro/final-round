@@ -4,24 +4,31 @@
 .footer {
   display: flex;
   flex-direction: column;
-  //   align-items: end;
   justify-content: end;
-  height: 105px;
+  height: 145px;
   width: 100%;
+  border-top: 1px solid;
   border-color: $header-border;
   padding-bottom: 16px;
+  transition: all 0.5s ease-in-out;
+  @include tablet-up {
+    height: 97px;
+  }
+  @include desktop-up {
+    height: 81px;
+  }
   &__container {
-    // padding-bottom: 16px;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    // align-items: center;
-    // justify-content: center;
     @include tablet-up {
       padding: 0 24px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+    }
+    @include desktop-up {
+       padding: 0 32px;
     }
   }
   &__text {
