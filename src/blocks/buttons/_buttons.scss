@@ -30,6 +30,13 @@
   }
   &_close {
     background-image: url("../img/close.svg");
+    &_modal-window {
+      @include notebook-up {
+        position: absolute;
+        left: -72px;
+        top: 36px
+      }
+    }
   }
   &_search {
     background-image: url("../img/search.svg");
@@ -56,6 +63,24 @@
     @include tablet-up {
       position: static;
     }
+  }
+  &_send {
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 8px;
+    gap: 2px;
+    width: 136px;
+    height: 32px;
+    border-radius: 16px;
+    background-color: $pink;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: -0.15px;
+    text-transform: uppercase;
+    color: $background-white;
   }
   &_close {
     &_burger-menu {

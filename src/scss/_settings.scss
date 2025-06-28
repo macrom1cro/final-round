@@ -24,7 +24,7 @@ html *,
 }
 
 body {
-  min-width: 320px;
+    min-width: 320px;
   display: flex;
   position: relative;
   justify-content: center;
@@ -90,6 +90,7 @@ textarea::-moz-placeholder {
 }
 
 .container {
+  overflow: hidden;
   position: relative;
   min-width: 320px;
   max-width: 1440px;
@@ -104,15 +105,16 @@ textarea::-moz-placeholder {
     opacity: 0;
     z-index: 2;
     background: $background-white;
+    @include notebook-up {
+      visibility: hidden;
+    }
+
     &_modal {
       z-index: 4;
     }
     &.active {
       visibility: visible;
       opacity: 0.96;
-      @include notebook-up {
-        visibility: hidden;
-      }
     }
   }
 }
