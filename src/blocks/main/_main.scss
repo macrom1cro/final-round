@@ -177,7 +177,6 @@
 
   &__image {
     width: 100%;
-    height: 100%;
     object-fit: cover;
     @include tablet-up {
       max-width: 50%;
