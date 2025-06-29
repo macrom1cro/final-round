@@ -176,13 +176,15 @@
   }
 
   &__image {
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     @include tablet-up {
       max-width: 50%;
       border-radius: 6px;
     }
     @include desktop-up {
-      max-width: 531px;
+      width: 531px;
       height: 307px;
     }
   }

@@ -42,6 +42,7 @@
     background-image: url("../img/search.svg");
   }
   &_order {
+    justify-self: end;
     position: absolute;
     right: 16px;
     bottom: 16px;

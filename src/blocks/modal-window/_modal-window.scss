@@ -5,7 +5,7 @@
   visibility: hidden;
   position: absolute;
   width: 320px;
-  min-height: 676px;
+  min-height: 100%;
   padding: 24px 16px 0;
   right: 0;
   display: flex;
@@ -16,12 +16,10 @@
   border-left: 1px solid;
   border-color: $border-color;
   box-shadow: 16px 0px 52px 0px #0e185033;
-  transform: translatey(-676px);
+  transform: translatey(-100%);
   transition: all 0.5s ease-in-out;
   @include notebook-up {
     width: 440px;
-    min-height: 940px;
-    transform: translatey(-940px);
     padding: 40px 32px 0;
   }
   &.active {
